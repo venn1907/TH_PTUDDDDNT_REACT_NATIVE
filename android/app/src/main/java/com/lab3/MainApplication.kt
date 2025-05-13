@@ -1,4 +1,5 @@
 package com.lab3
+import com.oblador.vectoricons.VectorIconsPackage
 
 import android.app.Application
 import com.facebook.react.PackageList
@@ -17,10 +18,7 @@ class MainApplication : Application(), ReactApplication {
   override val reactNativeHost: ReactNativeHost =
       object : DefaultReactNativeHost(this) {
         override fun getPackages(): List<ReactPackage> =
-            PackageList(this).packages.apply {
-              // Packages that cannot be autolinked yet can be added manually here, for example:
-              // add(MyReactNativePackage())
-            }
+            PackageList(this).packages + VectorIconsPackage()
 
         override fun getJSMainModuleName(): String = "index"
 
